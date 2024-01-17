@@ -1,3 +1,5 @@
 find_package(Vulkan REQUIRED)
+add_subdirectory(ext/glm)
+add_subdirectory(ext/glfw)
 add_library(bluedragon src/BDApp.cpp)
 target_include_directories(bluedragon PUBLIC headers)
