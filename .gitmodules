@@ -1,6 +1,0 @@
-[submodule "engine/ext/glfw"]
-	path = engine/ext/glfw
-	url = https://github.com/glfw/glfw.git
-[submodule "engine/ext/glm"]
-	path = engine/ext/glm
-	url = https://github.com/icaven/glm.git
