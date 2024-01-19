@@ -37,8 +37,6 @@ if(Vulkan_FOUND)
        COMMENT "Building shaders"
     )
     target_compile_features(bluedragon PUBLIC cxx_std_17)
-else()
-    message(FATAL_ERROR "You didn't install Vulkan! CHeck if you installed it!")
 endif()
 
 add_subdirectory(test)
