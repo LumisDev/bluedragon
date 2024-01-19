@@ -9,18 +9,20 @@ namespace bd
     class BDWindow{
         public:
             BDWindow(int w, int h, string name);
+           
             ~BDWindow();
-
+            
             BDWindow(const BDWindow&) = delete;
+            
             BDWindow& operator=(const BDWindow&) = delete;
-
+            BDWindow(BDWindow&&) = delete;  
             bool shouldClose() { return glfwWindowShouldClose(window); }
             VkExtent2D getExtent() { return {static_cast<uint32_t>(width), static_cast<uint32_t>(height)}; }
             bool wasWindowResized() { return framebufferResized; }
             void resetWindowResizedFlag() { framebufferResized = false; }
             GLFWwindow *getGLFWwindow() const { return window; }
 
-            VkResult createWindowSurface(VkInstance instance, VkSurfaceKHR* surface);
+            void createWindowSurface(VkInstance instance, VkSurfaceKHR* surface);
 
         private:
             GLFWwindow* window;
