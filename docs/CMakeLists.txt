@@ -10,6 +10,4 @@ if(BD_BUILD_DOCS AND Doxygen_FOUND AND CMAKE_BUILD_TYPE MATCHES "^[Rr]elease")
         COMMENT "Making the docs for you..."
         VERBATIM
     )
-elseif(BD_BUILD_DOCS AND NOT Doxygen_FOUND)
-    message(FATAL_ERROR "Do you wanna build docs without doxygen ???")
 endif()
