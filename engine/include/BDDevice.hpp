@@ -43,7 +43,7 @@ namespace bd {
         SwapChainSupportDetails getSwapChainSupport() { return querySwapChainSupport(physicalDevice); }
         uint32_t findMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties);
         QueueFamilyIndices findPhysicalQueueFamilies() { return findQueueFamilies(physicalDevice); }
-        const vector<VkFormat> &candidates, VkImageTiling tiling, VkFormatFeatureFlags features);
+        VkFormat findSupportedFormat(const vector<VkFormat> &candidates, VkImageTiling tiling, VkFormatFeatureFlags features);
 
   // Buffer Helper Functions
   void createBuffer(
@@ -73,6 +73,30 @@ namespace bd {
         void pickPhysicalDevice();
         void createLogicalDevice();
         void createCommandPool();
+        
+        // helper functions
+        // helper functions
+  bool isDeviceSuitable(VkPhysicalDevice device);
+  std::vector<const char *> getRequiredExtensions();
+  bool checkValidationLayerSupport();
+  QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device);
+  void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT &createInfo);
+  void hasGflwRequiredInstanceExtensions();
+  bool checkDeviceExtensionSupport(VkPhysicalDevice device);
+  SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device);
 
-    }
+  VkInstance instance;
+  VkDebugUtilsMessengerEXT debugMessenger;
+  VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
+  BDWindow &window;
+  VkCommandPool commandPool;
+
+  VkDevice device_;
+  VkSurfaceKHR surface_;
+  VkQueue graphicsQueue_;
+  VkQueue presentQueue_;
+
+  const std::vector<const char *> validationLayers = {"VK_LAYER_KHRONOS_validation"};
+  const std::vector<const char *> deviceExtensions = {VK_KHR_SWAPCHAIN_EXTENSION_NAME};
+    };
 }
