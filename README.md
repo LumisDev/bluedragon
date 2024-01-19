@@ -5,7 +5,7 @@ Is a Vulkan-powered, C++-made game engine.
 
 ## Build instructions
 
-To configure the project, I added two custom options (see the [main CMake file](./CMakeLists.txt) and the [test CMake file](./test/CMakeLists.txt)):
+To configure the project, I added two custom options (see the [main CMake file](./CMakeLists.txt) and the [test CMake file](./test/CMakeLists.txt) and the [docs CMake file](./docs/CMakeLists.txt)):
 - One for the test build (```BUILD_TEST```)
 - and one for the documents (```BD_BUILD_DOCS```)
 
