@@ -2,5 +2,6 @@
 
 App::App()
 {
-    cout << "HEY! Bluedragon test app is running!" << endl << "Still workin' on it!" << endl;
+    window = new BDWindow(640, 480, "BDEngine");
+    device = new BDDevice(window);
 }
